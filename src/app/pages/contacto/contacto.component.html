@@ -1,0 +1,47 @@
+<div class="card p-3 mt-5" style="max-width: 700px;margin: 0 auto;">
+    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="enviarConsulta()">
+        <div class="mb-3">
+            <input 
+                class="form-control" 
+                type="text" 
+                formControlName="nombre"
+                [class.is-invalid]="nombreNoValido" 
+                placeholder="Nombre"
+                >
+                <small *ngIf="nombreNoValido" class="form-text text-danger">ingrese al menos 3 caracteres</small>
+            </div>
+            <div class="mb-3">
+                <input 
+                class="form-control" 
+                type="text" 
+                formControlName="telefono" 
+                [class.is-invalid]="telefonoNoValido"
+                placeholder="Celular/Teléfono"
+                >
+                <small *ngIf="telefonoNoValido" class="form-text text-danger">ingrese al menos 8 caracteres</small>
+        </div>
+        <div class="mb-3">
+            <div class="mb-3">
+                <input 
+                    class="form-control" 
+                    type="email"
+                    formControlName="correo"
+                    [class.is-invalid]="correoNoValido"
+                    id="exampleFormControlInput1" 
+                    placeholder="Email"
+                    >
+                    <small *ngIf="correoNoValido" class="form-text text-danger">ingrese un email válido</small>
+            </div>
+            <label for="exampleFormControlTextarea1" class="form-label">Consulta</label>
+            <textarea
+                class="form-control" 
+                formControlName="consulta"
+                [class.is-invalid]="consultaNoValido"
+                id="exampleFormControlTextarea1" 
+                rows="4"
+                ></textarea>
+                <small *ngIf="consultaNoValido" class="form-text text-danger">Por favor escriba su consulta</small>
+        </div>
+        <button type="submit" class="btn btn-outline-secondary">Enviar</button>
+    </form>
+</div>
