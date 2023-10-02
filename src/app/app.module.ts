@@ -8,7 +8,13 @@ import { APP_ROUTING } from './app.routes';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TramitesComponent } from './pages/tramites/tramites.component';
+import { VentaformularioComponent } from './pages/ventaformulario/ventaformulario.component';
+import { EmbarcacionesComponent } from './pages/embarcaciones/embarcaciones.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { AcercaComponent } from './pages/acerca/acerca.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     InicioComponent,
     FooterComponent,
-    ContactoComponent
+    ContactoComponent,
+    TramitesComponent,
+    VentaformularioComponent,
+    EmbarcacionesComponent,
+    AcercaComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     APP_ROUTING,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
