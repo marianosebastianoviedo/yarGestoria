@@ -18,8 +18,7 @@ export class ContactoComponent implements OnInit {
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       telefono: ['', [Validators.required, Validators.minLength(8)]],
       correo: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      consulta: ['', [Validators.required, Validators.minLength(3)]],
-      receptor: ['ayresgestoria@gmail.com', [Validators.required, Validators.minLength(3)]],
+      consulta: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
@@ -45,7 +44,6 @@ export class ContactoComponent implements OnInit {
      });
    }else{
     this.spinner.show();
-
     
      console.log(this.forma.value);
      const finalForm = this.forma.value;
@@ -56,8 +54,8 @@ export class ContactoComponent implements OnInit {
         this.failMail = false;
         setTimeout(() => {
           this.successMail = false;
+          this.spinner.hide();
         }, 10000);
-        this.spinner.hide();
         this.forma.reset();
       },
       error: (e)=>{
@@ -66,8 +64,8 @@ export class ContactoComponent implements OnInit {
         this.failMail = true;
         setTimeout(() => {
           this.failMail = false;
+          this.spinner.hide();
         }, 10000);
-        this.spinner.hide();
       },
       complete: ()=>{console.log('COMPLETE FULL');}
      });

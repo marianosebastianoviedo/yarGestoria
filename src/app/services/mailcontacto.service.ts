@@ -9,7 +9,7 @@ export class MailcontactoService {
   constructor(private http:HttpClient) { }
 
   sendMail(bodyMail:any){
-    return this.http.post('http://localhost:3000/mail', bodyMail);
+    return this.http.post('https://formsubmit.co/ajax/9afc4e30cb08afd039764f95e785db97', bodyMail);
+    /* return this.http.post('https://formsubmit.co/ajax/ayresgestoria@gmail.com', bodyMail); */
   }
-
 }
