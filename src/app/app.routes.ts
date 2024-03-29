@@ -17,7 +17,7 @@ const APP_ROUTES: Routes = [
       component: VentaformularioComponent,
     },
     {
-      path: 'embarcaciones',
+      path: 'servicios',
       component: EmbarcacionesComponent,
     },
     {
